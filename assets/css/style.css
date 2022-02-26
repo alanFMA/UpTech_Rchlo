@@ -22,7 +22,7 @@ header {
   padding: 20px 10% 20px 10%;
 }
 
-header > p{
+header > p {
   padding-top: 10px;
 }
 
@@ -62,7 +62,6 @@ div.imagem {
   font-size: 20px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.274);
 }
-
 
 img {
   display: flex;
@@ -122,7 +121,6 @@ div.cartao_cvv {
   width: 30%;
 }
 
-
 input:not(input#checkit) {
   margin: 5px;
   border: 1px solid;
@@ -149,19 +147,21 @@ input:not(input#checkit) {
 select.seta {
   font-size: 16px;
   margin: 5px;
-  width: 100%!important;
-  display: block!important;
-  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  width: 100% !important;
+  display: block !important;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   height: calc(2.25rem + 2px);
   line-height: 1.5;
-    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
-    line-height: 1.5;
-    color: #495057;
-    background: rgb(255, 255, 255) url(../img/seta.svg) no-repeat right 0.75rem center;
-    background-size: 8px 10px;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    appearance: none;
+  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+  line-height: 1.5;
+  color: #495057;
+  background: rgb(255, 255, 255) url(../img/seta.svg) no-repeat right 0.75rem
+    center;
+  background-size: 8px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  appearance: none;
 }
 
 option {
@@ -209,7 +209,6 @@ span.checkmark {
   background-image: url(../img/checked.svg);
 }
 
-
 button {
   margin-left: 15px !important;
   display: inline-block;
@@ -227,7 +226,7 @@ button {
   font-size: 1rem;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
@@ -252,8 +251,6 @@ button:active {
   background-color: #003b94;
   border-color: #002d70;
 }
-
-
 
 input:focus {
   border-color: #86b7fe;
@@ -282,7 +279,7 @@ input:focus {
     padding: 5px 10px;
     width: 100%;
   }
-  .title2{
+  .title2 {
     padding: 15px 15px 15px 20px;
     font-size: 25px;
   }
@@ -296,7 +293,7 @@ input:focus {
     left: 9px;
     height: 18px;
     width: 18px;
-    }
+  }
 }
 
 @media only screen and (max-width: 615px) {
@@ -342,7 +339,7 @@ input:focus {
     line-height: 18px;
     width: 100%;
   }
-  label:not(label.container)  {
+  label:not(label.container) {
     padding-left: 5px !important;
   }
   button {
@@ -358,9 +355,9 @@ input:focus {
     padding-top: 10px;
   }
   span.checkmark {
-  top: 1px;
-  left: 9px;
-  height: 18px;
-  width: 18px;
+    top: 1px;
+    left: 9px;
+    height: 18px;
+    width: 18px;
   }
 }
