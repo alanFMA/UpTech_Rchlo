@@ -1,61 +1,182 @@
 @charset "UTF-8";
 
-body {
-    background-color: rgb(230, 230, 230);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Roboto", sans-serif;
 }
 
-.principal {
-    background-color: white;
+body {
+  background-color: rgb(230, 230, 230);
 }
 
 header {
-    background-color: rgb(230, 230, 230);
-    padding: 10px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 20px;
 }
 
-dd {
-    text-align: left;
+main.principal {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 10%;
 }
 
-#camisa {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+div.formularios {
+  display: flex;
+  flex-direction: row;
 }
 
-.h2 {
-    display: flex;
-    width: 550px;
-    margin: 30px auto auto auto;
-    background-color: rgba(245, 245, 245);
-    padding: 5px;
-    border: 1px solid rgb(212, 209, 209);
+section#camisa {
+  width: 20%;
+  border-radius: 3px;
+  border: 1px solid rgba(128, 128, 128, 0.274);
 }
 
-.produto {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgb(212, 209, 209)
+section.dados {
+  width: 80%;
+}
+
+div.imagem {
+  padding: 20px 20px 10px 20px;
+}
+
+.title2 {
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.274)
+}
+
+div.title2 > p {
+  font-size: 16px;
 }
 
 img {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 5px 5px 5px 5px;
+  border-radius: 4px;
+  border: 1px solid rgba(128, 128, 128, 0.274);
+}
+
+div.produto {
+  padding: 0px 20px 0px 20px;
+}
+
+dl {
+  line-height: 25px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  padding-bottom: 10px;
+}
+
+fieldset {
+  width: 100%;
+  border: none;
+}
+
+legend {
+  font-size: 28px;
+  padding: 10px 0px 20px 10px;
+}
+
+form.dados_pessoais,
+form.cartao {
+  padding: 0px 10px;
+  width: 50%;
+}
+
+input,
+select {
+  margin: 5px;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.input100 {
+  width: 100%;
+}
+
+button {
+  margin: 5px 0px 0px 10px;
+}
+
+input:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.075) inset, 0 0 5px #86b7fe;
+  outline: 0 none;
+}
+
+@media only screen and (max-width: 992px) {
+  div.formularios {
     display: flex;
-    width: 550px;
-    height:600px;
-    margin: auto;
-    padding: 10px 5px 5px 5px;
+    flex-direction: column;
+  }
+  section#camisa {
+    width: 35%;
+  }
+  section.dados {
+    width: 65%;
+  }
 
+  label {
+    padding-left: 30px;
+  }
+
+  form.dados_pessoais,
+  form.cartao {
+    padding: 0px 10px;
+    width: 100%;
+  }
+  div.title2 > p {
+    font-size: 36px;
+  }
+  fieldset {
+    width: 100%;
+  }
 }
 
-input, select {
-    margin: 5px;
-    border: 1px solid;
-    border-radius: 3px;
+@media only screen and (max-width: 615px) {
+  div.formularios {
+    line-height: 25px;
+    width: 100%;
+  }
+  main.principal {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+  div.title2 > p {
+    font-size: 22px;
+  }
+  section#camisa {
+    width: 100%;
+  }
+  form.dados_pessoais,
+  form.cartao {
+    padding: 0px 10px;
+    width: 100%;
+  }
+  section.dados {
+    width: 100%;
+  }
+  fieldset {
+    width: 100%;
+  }
 }
-
