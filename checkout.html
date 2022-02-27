@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Checkout RCHLO</title>
   </head>
+
   <body>
     <header>
       <h1>Ótima escolha!</h1>
@@ -17,107 +18,139 @@
     </header>
     <main class="principal">
       <section id="camisa">
-        <div class="title2">
-          <p>Sua compra</p>
-        </div>
-        <div class="imagem_produto">
-          <div class="imagem">
-            <img
-              src="https://static.riachuelo.com.br/RCHLO/14247984003/portrait/279d0565feb361cff852a6a792ffdb5c89890ba3.jpg"
-              alt="Camiseta Simpsons"
-              srcset=""
-            />
+
+          <div class="title2">
+            <p>Sua compra</p>
           </div>
-          <div class="produto">
-            <dl>
-              <dt>Produto</dt>
-              <dd>
-                Camiseta Manga Curta Malha Tie Dye The Simpsons Branco Riachuelo
-              </dd>
-              <dt>Cor</dt>
-              <dd>Branco</dd>
-              <dt>Tamanho</dt>
-              <dd>G</dd>
-              <dt>Preço</dt>
-              <dd>R$ 69,90</dd>
-            </dl>
+          <div class="imagem_produto">
+            <div class="imagem">
+              <img
+                src="https://static.riachuelo.com.br/RCHLO/14247984003/portrait/279d0565feb361cff852a6a792ffdb5c89890ba3.jpg"
+                alt="Camiseta Simpsons"
+                srcset=""
+              />
+            </div>
+            <div class="produto">
+              <dl>
+                <dt>Produto</dt>
+                <dd>
+                  Camiseta Manga Curta Malha Tie Dye The Simpsons Branco
+                  Riachuelo
+                </dd>
+                <dt>Cor</dt>
+                <dd>Branco</dd>
+                <dt>Tamanho</dt>
+                <dd>G</dd>
+                <dt>Preço</dt>
+                <dd>R$ 69,90</dd>
+              </dl>
+            </div>
           </div>
         </div>
       </section>
-      <section class="dados">
+      <div class="qtd_total">
+        <div class="input-form">
+            <label for="quantidade">Quantidade:</label>
+            <input onclick="chamar()" type="number" name="inputNumber" id="inputNumber" min="1" max="5000" value="1"> 
+        </div>
+        <div class="input-form">
+          <label for="total">Total:</label><input type="numeric" id="valor" value="69,90">
+        </div>
+      </div>
+      <form class="dados">
         <div class="formularios">
-          <form method="post" action="" class="dados_pessoais">
+          <div class="dados_pessoais">
             <div class="field_dados">
               <fieldset>
                 <legend>Dados Pessoais</legend>
-                <label for="nome">Nome completo</label><br /><input
-                  type="text"
-                  required="required"
-                  pattern="([aA-zZ]+)"
-                  placeholder="Apenas letras"
-                />
-                <label for="email">Email</label>
-                <br /><input
-                  id="email"
-                  type="email"
-                  required
-                  name="email"
-                  placeholder="email@exemplo.com"
-                />
-                <label>CPF</label><br /><input
-                  type="text"
-                  placeholder="000.000.000-00"
-                /><br />
-              </fieldset>
-              <div class="check">
-                <label class="container">
+                <div class="input-form">
+                  <label for="nome">Nome completo</label>
                   <input
-                    type="checkbox"
-                    name="newsletter"
-                    checked="checked"
-                    id="checkit"
+                    type="text"
+                    required="required"
+                    pattern="([aA-zZ]+)"
+                    max="200"
+                    placeholder="Digite seu nome"
                   />
-                  &nbsp;Quero receber a newsletter da RCHLO!
-                  <span class="checkmark"></span>
-                </label>
-              </div>
+                </div>
+                <div class="input-form">
+                  <label for="email">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    name="email"
+                    max="300"
+                    placeholder="email@exemplo.com"
+                  />
+                </div>
+                <div class="input-form">
+                  <label>CPF</label>
+                  <input oninput="mascara(this)" type="text" placeholder="000.000.000-00" required max="14"/><br />
+                </div>
+              </fieldset>
             </div>
-          </form>
-          <form class="cartao">
+            <div class="checkit">
+              <label class="container"
+                >Quero receber a newsletter da RCHLO
+                <input type="checkbox" checked="checked" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="cartao">
             <div class="field_cartao">
               <fieldset>
                 <legend class="cartaotop">Cartão de crédito</legend>
                 <div class="cartaocvv">
                   <div class="cartao_numero">
-                    <label>Número</label><br />
-                    <input
-                      type="numeric"
-                      required
-                      minlength="16"
-                      maxlength="16"
-                    />
+                    <div class="input-form">
+                      <label for="number">Número</label>
+                      <input
+                        type="text"
+                        required
+                        minlength="16"
+                        maxlength="16"
+                        placeholder="0000 0000 0000 0000"
+                      />
+                    </div>
                   </div>
                   <div class="cartao_cvv">
-                    <label>CVV</label>
-                    <input type="numéric" required minlength="3" maxlength="3" />
+                    <div class="input-form">
+                      <label for="CVV">CVV</label>
+                      <input
+                        type="numeric"
+                        required
+                        minlength="3"
+                        maxlength="3"
+                        placeholder="000"
+                      />
+                    </div>
                   </div>
                 </div>
-                <label>Bandeira</label>
-                <select class="seta">
-                  <option selected disabled value="">
-                    Selecione uma opção...
-                  </option>
-                  <option value="Mastercard">Mastercard</option>
-                  <option value="Visa">Visa</option>
-                  <option value="American">American Express</option>
-                </select>
-                <label>Validade</label><br /><input type="month" />
+                <div class="input-form">
+                  <label for="Option">Bandeira</label>
+                  <select>
+                    <option selected disabled value="">
+                      Selecione uma opção...
+                    </option>
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="Visa">Visa</option>
+                    <option value="American">American Express</option>
+                  </select>
+                </div>
+
+                <div class="input-form">
+                  <label for="Validate">Validade</label>
+                  <input type="month" required />
+                </div>
               </fieldset>
             </div>
-          </form>
+          </div>
         </div>
-          <button type="submit" value="Confirmar Pedido">Confirmar Pedido</button>
-      </section>
+        <button type="submit" value="Confirmar Pedido">Confirmar Pedido</button>
+      </form>
     </main>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
