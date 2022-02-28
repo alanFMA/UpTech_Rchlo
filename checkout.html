@@ -51,10 +51,10 @@
       <div class="qtd_total">
         <div class="input-form">
             <label for="quantidade">Quantidade:</label>
-            <input onclick="chamar()" type="number" name="inputNumber" id="inputNumber" min="1" max="5000" value="1"> 
+            <input type="number" name="inputNumber" id="input-number" onchange="pegaNumber()" min="1" max="99" value="1"> 
         </div>
         <div class="input-form">
-          <label for="total">Total:</label><input type="numeric" id="valor" value="69,90">
+          <label for="valor">Total:</label><input type="text" id="valor" value= "R$ 69,90" readonly>
         </div>
       </div>
       <form class="dados">
@@ -86,7 +86,7 @@
                 </div>
                 <div class="input-form">
                   <label>CPF</label>
-                  <input oninput="mascara(this)" type="text" placeholder="000.000.000-00" required max="14"/><br />
+                  <input oninput="mascara(this)" type="text" placeholder="000.000.000-00" required pattern="(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})" max="14"/><br />
                 </div>
               </fieldset>
             </div>
@@ -111,6 +111,7 @@
                         required
                         minlength="16"
                         maxlength="16"
+                        pattern="[0-9]+$"
                         placeholder="0000 0000 0000 0000"
                       />
                     </div>
@@ -118,11 +119,12 @@
                   <div class="cartao_cvv">
                     <div class="input-form">
                       <label for="CVV">CVV</label>
-                      <input
+                      <input id="cvv"
                         type="numeric"
                         required
                         minlength="3"
                         maxlength="3"
+                        pattern="[0-9]+$"
                         placeholder="000"
                       />
                     </div>
@@ -130,7 +132,7 @@
                 </div>
                 <div class="input-form">
                   <label for="Option">Bandeira</label>
-                  <select>
+                  <select required>
                     <option selected disabled value="">
                       Selecione uma opção...
                     </option>

@@ -289,11 +289,16 @@ input:focus {
     display: flex;
     flex-direction: column;
   }
+  
   section#camisa {
-    width: 35%;
+    width: 20%;
   }
+  div.qtd_total {
+    width: 20%;
+  }
+
   form.dados {
-    width: 65%;
+    width: 60%;
   }
 
   div.dados_pessoais {
