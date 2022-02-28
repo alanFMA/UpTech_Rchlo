@@ -34,8 +34,7 @@
               <dl>
                 <dt>Produto</dt>
                 <dd>
-                  Camiseta Manga Curta Malha Tie Dye The Simpsons Branco
-                  Riachuelo
+                  Camiseta Manga Curta Malha Tie Dye The Simpsons Branco Riachuelo
                 </dd>
                 <dt>Cor</dt>
                 <dd>Branco</dd>
@@ -67,10 +66,12 @@
                   <label for="nome">Nome completo</label>
                   <input
                     type="text"
-                    required="required"
-                    pattern="([aA-zZ]+)"
+                    required
+                    pattern="(^[^-\s][a-zA-ZÀ-ú ]*)"
                     max="200"
                     placeholder="Digite seu nome"
+                    oninvalid="this.setCustomValidity('Preencha este campo apenas com letras')"
+                    oninput="this.setCustomValidity('')"
                   />
                 </div>
                 <div class="input-form">
@@ -82,11 +83,19 @@
                     name="email"
                     max="300"
                     placeholder="email@exemplo.com"
+                    oninvalid="this.setCustomValidity('Email obrigatório')"
+                    oninput="this.setCustomValidity('')"
                   />
                 </div>
                 <div class="input-form">
                   <label>CPF</label>
-                  <input oninput="mascara(this)" type="text" placeholder="000.000.000-00" required pattern="(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})" max="14"/><br />
+                  <input id="cpf" 
+                  oninput="mascara(this)" 
+                  type="text" 
+                  placeholder="000.000.000-00" 
+                  required 
+                  pattern="(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})" max="14"
+                  />
                 </div>
               </fieldset>
             </div>
