@@ -50,7 +50,15 @@
       <div class="qtd_total">
         <div class="input-form">
             <label for="quantidade">Quantidade:</label>
-            <input type="number" name="inputNumber" id="input-number" onchange="pegaNumber()" min="1" max="99" value="1"> 
+            <input type="number" 
+            name="inputNumber" 
+            id="input-number"
+            onchange="pegaNumber()" 
+            required
+            min="1" 
+            max="99" 
+            value="1"
+            > 
         </div>
         <div class="input-form">
           <label for="valor">Total:</label><input type="text" id="valor" value= "R$ 69,90" readonly>
@@ -70,8 +78,8 @@
                     pattern="(^[^-\s][a-zA-ZÀ-ú ]*)"
                     max="200"
                     placeholder="Digite seu nome"
-                    oninvalid="this.setCustomValidity('Preencha este campo apenas com letras')"
-                    oninput="this.setCustomValidity('')"
+                    oninvalid="onValidate(this, 'Preencha o campo apenas com letras.')"
+                    oninput="onValidate(this, 'Preencha o campo apenas com letras.')"
                   />
                 </div>
                 <div class="input-form">
@@ -83,19 +91,22 @@
                     name="email"
                     max="300"
                     placeholder="email@exemplo.com"
-                    oninvalid="this.setCustomValidity('Email obrigatório')"
-                    oninput="this.setCustomValidity('')"
+                    oninvalid="onValidate(this, 'Email obrigatório.')"
+                    oninput="onValidate(this, 'Inclua um @ no email.')"
                   />
                 </div>
                 <div class="input-form">
                   <label>CPF</label>
                   <input id="cpf" 
-                  oninput="mascara(this)" 
+                  oninput="mascaracpf(this)" 
                   type="text" 
                   placeholder="000.000.000-00" 
-                  required 
-                  pattern="(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})" max="14"
-                  />
+                  required
+                  pattern="(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})"
+                  max="14"
+                  oninvalid="onValidate(this, 'CPF inválido.')"
+                  oninput="onValidate(this, 'Digite apenas números.')"
+                  /> <br/>
                 </div>
               </fieldset>
             </div>
@@ -114,14 +125,18 @@
                 <div class="cartaocvv">
                   <div class="cartao_numero">
                     <div class="input-form">
-                      <label for="number">Número</label>
-                      <input
+                      <label for="cc">Número</label>
+                      <!-- minLength dando erro -->
+                      <input id="cc"
                         type="text"
-                        required
+                        name="cc"
                         minlength="16"
                         maxlength="16"
-                        pattern="[0-9]+$"
+                        pattern="[0-9 ]+$"
+                        required
                         placeholder="0000 0000 0000 0000"
+                        oninvalid="onValidate(this, 'Número do cartão inválido.')"
+                        oninput="onValidate(this, 'Digite apenas números.')"
                       />
                     </div>
                   </div>
@@ -135,13 +150,19 @@
                         maxlength="3"
                         pattern="[0-9]+$"
                         placeholder="000"
+                        oninvalid="onValidate(this, 'Padrão inválido para o CVV.')"
+                        oninput="onValidate(this, 'Digite apenas 3 números.')"
                       />
                     </div>
                   </div>
                 </div>
                 <div class="input-form">
-                  <label for="Option">Bandeira</label>
-                  <select required>
+                  <label for="option">Bandeira</label>
+                  <select 
+                    required
+                    oninvalid="onValidate(this, 'Selecione a bandeira do cartão.')"
+                    oninput="onValidate(this, 'Selecione a bandeira do cartão.')"
+                  >
                     <option selected disabled value="">
                       Selecione uma opção...
                     </option>
@@ -153,7 +174,12 @@
 
                 <div class="input-form">
                   <label for="Validate">Validade</label>
-                  <input type="month" required />
+                  <input 
+                  type="month" 
+                  required 
+                  oninvalid="onValidate(this, 'Data de validade obrigatória.')"
+                  oninput="onValidate(this, 'Digite a data de validade do cartão.')" 
+                  />
                 </div>
               </fieldset>
             </div>
