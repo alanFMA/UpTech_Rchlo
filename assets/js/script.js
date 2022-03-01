@@ -20,19 +20,6 @@ function pegaNumber() {
      if (v.length == 11) i.value += "-";
   }
 
-//   document.getElementById('cpf').oninvalid = function() {
-
-//     // remove mensagens de erro antigas
-//     this.setCustomValidity("");
-  
-//     // reexecuta validação
-//     if (!this.validity.valid) {
-  
-//         // se inválido, coloca mensagem de erro
-//         this.setCustomValidity("CPF inválido");
-//     }
-//   };
-
 function mascaracartao(o,f){
 v_obj=o
 v_fun=f
